@@ -2,9 +2,10 @@
   "name": "snapcheck-sample-app",
   "version": "0.0.0",
   "license": "MIT",
+  "main": "server.js",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -13,10 +14,11 @@
   },
   "private": true,
   "engines": {
-    "node": "6.10.0",
+    "node": "8.11.4",
     "npm": "3.10.10"
   },
   "dependencies": {
+    "json-server": "^0.12.1",
     "@angular/cli": "^6.1.5",
     "@angular/compiler-cli": "^4.4.7",
     "@angular/animations": "^4.0.0",
