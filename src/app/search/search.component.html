@@ -1,0 +1,10 @@
+<p>
+  search works! <input type="text" #search (keyup)="onKey(search.value)">
+</p>
+<ul>
+    <li *ngFor="let order of filteredOrders">
+        <div (click)="edit(order.id)">
+            {{ order.title }}
+        </div>
+    </li>
+</ul>
