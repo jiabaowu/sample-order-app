@@ -40,6 +40,7 @@ export class EditComponent implements OnInit {
     this.http.put('https://fierce-plains-25599.herokuapp.com/api/users/' + this.model.id, this.model).subscribe(() => {
       console.log('saved');
     });
+    this.router.navigate(["search"]);
   }
 
   cancel() {

@@ -170,6 +170,26 @@
                 "amount": 510028,
                 "currency": "GBP"
             }
-        }
+        },
+        {
+            "id": 9,
+            "first_name": "Edward",
+            "last_name": "Martin",
+            "address": {
+                "address1": "123 Wood Ave.",
+                "address2": "#8",
+                "city": "New York",
+                "state": "NY",
+                "zip": "10001"
+            },
+            "profile_image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Creative-Tail-People-speaker.svg",
+            "gender": "MALE",
+            "age": 47,
+            "order_total": {
+                "amount": 1200,
+                "currency": "GBP"
+            }
+        },
+
     ]
 }

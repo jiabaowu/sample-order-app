@@ -32,12 +32,14 @@ export class SearchComponent implements OnInit {
 
   onKey(value: string) {
     this.filteredUsers = this.users.filter((user) => {
-        return user.first_name.indexOf(value) != -1 ||
-               user.last_name.indexOf(value) != -1 ||
+        return user.first_name.toLowerCase()
+                  .indexOf(value.toLowerCase()) != -1 ||
+               user.last_name.toLowerCase()
+                  .indexOf(value.toLowerCase()) != -1 ||
                this.amountPipe
-                 .transform(user.order_total.amount,
-                            user.order_total.currency)
-                 .indexOf(value) != -1;
+                  .transform(user.order_total.amount,
+                             user.order_total.currency)
+                  .indexOf(value) != -1;
     });
   }
 
