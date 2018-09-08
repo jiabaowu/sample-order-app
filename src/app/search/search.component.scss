@@ -27,9 +27,28 @@
         transition: 0.2s linear;
     }
     .order {
+        font-size: 16px;
         cursor: pointer;
         padding: 15px 10px;
         box-sizing: border-box;
         border-bottom: 1px solid #d1d5da;
+        display: flex;
+        flex-direction: row;
+        .user-details {
+            flex: 1;
+            .user-info {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                .order-total {
+                    background-color: #eee
+                }
+            }
+        }
+    }
+    img {
+        height: 50px;
+        width: 50px;
+        margin-right: 20px;
     }
 }
