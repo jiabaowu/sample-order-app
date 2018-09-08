@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Http } from '@angular/http';
 
 @Component({
   selector: 'app-edit',
@@ -12,7 +13,8 @@ export class EditComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private http: Http
     ) {
     this.activatedRoute.data.subscribe((res) => {
         this.order = res.order.json();
@@ -23,7 +25,9 @@ export class EditComponent implements OnInit {
   }
 
   save() {
-    console.log('save');
+    this.http.put('https://fierce-plains-25599.herokuapp.com/api/orders/' + this.order.id, this.order).subscribe(() => {
+      console.log('saved');
+    });
   }
 
   cancel() {
@@ -33,7 +37,9 @@ export class EditComponent implements OnInit {
   delete() {
     let res = window.confirm('Delete this order. Are you sure?');
     if (res) {
-        console.log('deleted');
+        this.http.delete('https://fierce-plains-25599.herokuapp.com/api/orders/' + this.order.id).subscribe(() => {
+          console.log('deleted');
+        });
         this.router.navigate(["search"]);
     } else {
         console.log('canceled');

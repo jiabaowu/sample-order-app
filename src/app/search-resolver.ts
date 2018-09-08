@@ -12,7 +12,7 @@ export class SearchResolver implements Resolve<any> {
 
     resolve(): Observable<any> {
         console.log('resolving');
-        return this.http.get('https://jsonplaceholder.typicode.com/posts');
+        return this.http.get('https://fierce-plains-25599.herokuapp.com/api/orders');
     }
 
 }

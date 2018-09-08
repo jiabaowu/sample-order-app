@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { AmountPipe } from '../amount.pipe';
 
 @Component({
   selector: 'app-search',
@@ -10,13 +11,7 @@ export class SearchComponent implements OnInit {
 
   orders: any[];
   filteredOrders: any[];
-  address = {
-                "address1": "123 Main St.",
-                "address2": "#1",
-                "city": "San Francisco",
-                "state": "CA",
-                "zip": "94035"
-            };
+  amountPipe: AmountPipe;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -28,6 +23,7 @@ export class SearchComponent implements OnInit {
         this.orders = res.list.json();
         this.filteredOrders = this.orders;
     });
+    this.amountPipe = new AmountPipe();
   }
 
   ngOnInit() {
@@ -36,7 +32,12 @@ export class SearchComponent implements OnInit {
 
   onKey(value: string) {
     this.filteredOrders = this.orders.filter((order) => {
-        return order.title.indexOf(value) != -1;
+        return order.first_name.indexOf(value) != -1 ||
+               order.last_name.indexOf(value) != -1 ||
+               this.amountPipe
+                 .transform(order.order_total.amount,
+                            order.order_total.currency)
+                 .indexOf(value) != -1;
     });
   }
 
