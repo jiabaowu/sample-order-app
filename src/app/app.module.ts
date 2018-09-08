@@ -31,7 +31,7 @@ const appRoutes: Routes = [
     component: EditComponent,
     canActivate: [AuthGuard],
     resolve: {
-        order: EditResolver,
+        user: EditResolver,
     },
   },
   { path: "**", component: LoginComponent }

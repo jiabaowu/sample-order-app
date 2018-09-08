@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class AmountPipe implements PipeTransform {
 
-  currencySymbol = new Map([['USD', '$'],['GBP', '£']])
+  currencySymbol = new Map([['USD', '$'],['GBP', '£'],['INR', '₹']])
 
   transform(value: number, currency: string): string {
     return this.getCurrencySymbol(currency) + this.getDecimal(value);

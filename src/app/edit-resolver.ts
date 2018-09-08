@@ -13,7 +13,7 @@ export class EditResolver implements Resolve<any> {
     resolve(route: ActivatedRouteSnapshot): Observable<any> {
         console.log('resolving');
         const id = route.params['id'];
-        return this.http.get('https://fierce-plains-25599.herokuapp.com/api/orders/' + id);
+        return this.http.get('https://fierce-plains-25599.herokuapp.com/api/users/' + id);
     }
 
 }

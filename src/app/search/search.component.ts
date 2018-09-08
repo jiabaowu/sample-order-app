@@ -9,19 +9,19 @@ import { AmountPipe } from '../amount.pipe';
 })
 export class SearchComponent implements OnInit {
 
-  orders: any[];
-  filteredOrders: any[];
+  users: any[];
+  filteredUsers: any[];
   amountPipe: AmountPipe;
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private router: Router
     ) {
-    this.orders = [];
-    this.filteredOrders = [];
+    this.users = [];
+    this.filteredUsers = [];
     this.activatedRoute.data.subscribe((res) => {
-        this.orders = res.list.json();
-        this.filteredOrders = this.orders;
+        this.users = res.list.json();
+        this.filteredUsers = this.users;
     });
     this.amountPipe = new AmountPipe();
   }
@@ -31,12 +31,12 @@ export class SearchComponent implements OnInit {
   }
 
   onKey(value: string) {
-    this.filteredOrders = this.orders.filter((order) => {
-        return order.first_name.indexOf(value) != -1 ||
-               order.last_name.indexOf(value) != -1 ||
+    this.filteredUsers = this.users.filter((user) => {
+        return user.first_name.indexOf(value) != -1 ||
+               user.last_name.indexOf(value) != -1 ||
                this.amountPipe
-                 .transform(order.order_total.amount,
-                            order.order_total.currency)
+                 .transform(user.order_total.amount,
+                            user.order_total.currency)
                  .indexOf(value) != -1;
     });
   }

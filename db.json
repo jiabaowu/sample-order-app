@@ -1,5 +1,5 @@
 {
-    "orders": [
+    "users": [
         {
             "id": 1,
             "first_name": "Jack",
@@ -54,7 +54,7 @@
             "age": 38,
             "order_total": {
                 "amount": 456123,
-                "currency": "USD"
+                "currency": "INR"
             }
         },
         {
@@ -111,12 +111,12 @@
             "age": 19,
             "order_total": {
                 "amount": 33322200,
-                "currency": "USD"
+                "currency": "INR"
             }
         },
         {
             "id": 7,
-            "first_name": "David",
+            "first_name": "Davy",
             "last_name": "Wilson",
             "address": {
                 "address1": "123 Main St.",
@@ -125,7 +125,7 @@
                 "state": "CA",
                 "zip": "94035"
             },
-            "profile_image_url": "PLACEHOLDER_IMAGE",
+            "profile_image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Creative-Tail-People-king.svg",
             "gender": "MALE",
             "age": 22,
             "order_total": {

@@ -24,7 +24,7 @@ export class EditComponent implements OnInit {
     ) {
     this.amountPipe = new AmountPipe();
     this.activatedRoute.data.subscribe((res) => {
-        this.model = res.order.json();
+        this.model = res.user.json();
         this.decimalAmount = this.amountPipe.getDecimal(
           this.model.order_total.amount);
         this.currencySymbol = this.amountPipe.getCurrencySymbol(
@@ -37,7 +37,7 @@ export class EditComponent implements OnInit {
 
   onSubmit() {
     this.model.order_total.amount = parseFloat(this.decimalAmount) * 100;
-    this.http.put('https://fierce-plains-25599.herokuapp.com/api/orders/' + this.model.id, this.model).subscribe(() => {
+    this.http.put('https://fierce-plains-25599.herokuapp.com/api/users/' + this.model.id, this.model).subscribe(() => {
       console.log('saved');
     });
   }
@@ -47,9 +47,9 @@ export class EditComponent implements OnInit {
   }
 
   delete() {
-    let res = window.confirm('Delete this order. Are you sure?');
+    let res = window.confirm('Delete this user. Are you sure?');
     if (res) {
-        this.http.delete('https://fierce-plains-25599.herokuapp.com/api/orders/' + this.model.id).subscribe(() => {
+        this.http.delete('https://fierce-plains-25599.herokuapp.com/api/users/' + this.model.id).subscribe(() => {
           console.log('deleted');
         });
         this.router.navigate(["search"]);

@@ -3,16 +3,16 @@
       <input type="text" #search (keyup)="onKey(search.value)" placeholder="Narrow your search">
     </div>
     <div>
-        <div *ngFor="let order of filteredOrders">
-            <div (click)="edit(order.id)" class="order">
-                <img src="{{ order.profile_image_url }}">
+        <div *ngFor="let user of filteredUsers">
+            <div (click)="edit(user.id)" class="user">
+                <img src="{{ user.profile_image_url }}">
                 <div class="user-details">
                     <div class="user-info">
-                        <div><strong>{{ order.first_name }} {{ order.last_name }}</strong> {{ order.age }} {{ order.gender }}</div>
-                        <div class="order-total"><strong>{{ order.order_total.amount | amount:order.order_total.currency }}</strong></div>
+                        <div><strong>{{ user.first_name }} {{ user.last_name }}</strong> {{ user.age }} {{ user.gender }}</div>
+                        <div><strong>{{ user.order_total.amount | amount:user.order_total.currency }}</strong></div>
                     </div>
                     <div class="address">
-                        {{ order.address | address }}
+                        {{ user.address | address }}
                     </div>
                 </div>
             </div>
