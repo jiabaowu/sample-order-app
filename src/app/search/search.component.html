@@ -4,7 +4,7 @@
 <ul>
     <li *ngFor="let order of filteredOrders">
         <div (click)="edit(order.id)">
-            {{ order.title }}
+            {{ order.title }}, {{ 1943 | amount:"GBP" }}, {{ address | address }}
         </div>
     </li>
 </ul>

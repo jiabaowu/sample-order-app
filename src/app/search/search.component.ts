@@ -10,6 +10,13 @@ export class SearchComponent implements OnInit {
 
   orders: any[];
   filteredOrders: any[];
+  address = {
+                "address1": "123 Main St.",
+                "address2": "#1",
+                "city": "San Francisco",
+                "state": "CA",
+                "zip": "94035"
+            };
 
   constructor(
     private activatedRoute: ActivatedRoute,

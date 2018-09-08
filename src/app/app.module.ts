@@ -11,6 +11,8 @@ import { SearchResolver } from './search-resolver';
 import { HttpModule } from '@angular/http';
 import { EditComponent } from './edit/edit.component';
 import { EditResolver } from './edit-resolver';
+import { AmountPipe } from './amount.pipe';
+import { AddressPipe } from './address.pipe';
 
 const appRoutes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -39,7 +41,9 @@ const appRoutes: Routes = [
     AppComponent,
     LoginComponent,
     SearchComponent,
-    EditComponent
+    EditComponent,
+    AmountPipe,
+    AddressPipe
   ],
   imports: [
     RouterModule.forRoot(
