@@ -1,0 +1,56 @@
+.header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 50px;
+    width: 100%;
+    z-index: 2;
+    background-color: white;
+    border-bottom: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header::after {
+    background: linear-gradient(to right, #9E7CC1, #8ECDEA);
+    content: '';
+    width: 100%;
+    position: absolute;
+    top: 50px;
+    height: 3px;
+    left: 0;
+}
+
+.header-text {
+    font-size: 24px;
+}
+
+.logout-button {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    cursor: pointer;
+    outline: none;
+    width: 100px;
+    height: 40px;
+    padding: 10px 15px;
+    border: 0;
+    color: #fff;
+    background-color: #79589f;
+    &:hover {
+        background-color: #6c4f8f;
+    }
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+    padding-top: 60px;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+    background-size: cover;
+}

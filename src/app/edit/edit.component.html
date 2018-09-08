@@ -1,4 +1,4 @@
-<div class="container">
+<div class="edit-container">
     <h1>Edit Form</h1>
     <form (ngSubmit)="onSubmit()" #editForm="ngForm">
         <div class="form-group">
@@ -74,15 +74,17 @@
         </div>
 
         <div class="form-group">
-            <label for="decimalAmount">Amount {{ currencySymbol }}</label>
+            <label for="decimalAmount">Amount ({{ currencySymbol }})</label>
             <input type="text" class="form-control"
                id="decimalAmount"
                [(ngModel)]="decimalAmount"
                name="decimalAmount">
         </div>
 
-        <button type="submit">save</button>
-        <button (click)="delete()">delete</button>
-        <button (click)="cancel()">cancel</button>
+        <div class="form-group">
+            <button type="submit">save</button>
+            <button (click)="delete()">delete</button>
+            <button (click)="cancel()">cancel</button>
+        </div>
     </form>
 </div>

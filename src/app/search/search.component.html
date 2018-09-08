@@ -1,14 +1,20 @@
-<p>
-  search works! <input type="text" #search (keyup)="onKey(search.value)">
-</p>
-<ul>
-    <li *ngFor="let order of filteredOrders">
-        <div (click)="edit(order.id)">
-            {{ order.first_name }} {{ order.last_name }}
-            {{ order.age }} {{ order.gender }},
-            ({{ order.order_total.amount
-                | amount:order.order_total.currency }})
-            {{ order.address | address }}
+<div class="search-container">
+    <div class="search-bar">
+      <input type="text" #search (keyup)="onKey(search.value)" placeholder="Narrow your search">
+    </div>
+    <div>
+        <div *ngFor="let order of filteredOrders">
+            <div (click)="edit(order.id)" class="order">
+                <div>
+                    <strong>{{ order.first_name }} {{ order.last_name }}</strong>
+                    {{ order.age }} {{ order.gender }},
+                    (<strong>{{ order.order_total.amount
+                        | amount:order.order_total.currency }}</strong>)
+                </div>
+                <div>
+                    {{ order.address | address }}
+                </div>
+            </div>
         </div>
-    </li>
-</ul>
+    </div>
+</div>

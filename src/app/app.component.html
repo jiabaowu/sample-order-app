@@ -1,15 +1,19 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="header">
   <div *ngIf="loggedIn">
-    Welcome FirstName LastName!!
-    <button (click)="logout()">logout</button>
+    <div class="header-text">
+        Welcome FirstName LastName!!
+    </div>
+    <button (click)="logout()" class="logout-button">logout</button>
   </div>
   <div *ngIf="!loggedIn">
-    Please log in.
+    <div class="header-text">
+        Please log in
+    </div>
   </div>
 </div>
 <div class="main">
-  <router-outlet></router-outlet>
+    <router-outlet></router-outlet>
 </div>
 
 
